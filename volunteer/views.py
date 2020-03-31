@@ -1,5 +1,5 @@
-from .models import State, Country
-from .serializers import StateSerializer, CountrySerializer
+from .models import Expertise, Doctor
+from .serializers import ExpertiseSerializer, DoctorSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -8,15 +8,15 @@ from rest_framework.authentication import TokenAuthentication
 # Create your views here.
 #psycopg2-2.8.4-cp27-cp27m-win32.whl
 
-class StateViewSet(viewsets.ModelViewSet):
-    queryset = State.objects.all()
-    serializer_class = StateSerializer
+class DoctorViewSet(viewsets.ModelViewSet):
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer
     authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny, )
 
-class CountryViewSet(viewsets.ModelViewSet):
-    queryset = Country.objects.all()
-    serializer_class = CountrySerializer
+class ExpertiseViewSet(viewsets.ModelViewSet):
+    queryset = Expertise.objects.all()
+    serializer_class = ExpertiseSerializer
     authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny, )
 

@@ -1,14 +1,14 @@
 from django.contrib import admin
-from . models import State, Country
+from . models import Doctor, Expertise
 # Register your models here.
 
 
-class StateAdmin(admin.ModelAdmin):
+class DoctorAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
 
-class CountryAdmin(admin.ModelAdmin):
+class ExpertiseAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
 
-admin.site.register(State, StateAdmin)
-admin.site.register(Country, CountryAdmin)
+admin.site.register(Expertise, ExpertiseAdmin)
+admin.site.register(Doctor, DoctorAdmin)
 

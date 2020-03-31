@@ -2,28 +2,30 @@ from django.db import models
 
 
 
-
-
-class Country(models.Model):
-    country = models.CharField(max_length=100, default='')
-    date = models.DateField(default=2019-12-13)
-    confirmed = models.CharField(max_length=100, default='')
-    death = models.CharField(max_length=100, default='')
-    recovered = models.CharField(max_length=100, default='')
-    
-    def __str__(self):
-        return self.country
-
-class State(models.Model):
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='state')
-    state = models.CharField(max_length=100, default='')
-    date = models.DateField(default=2019-12-13)
-    confirmed = models.CharField(max_length=100, default='')
-    death = models.CharField(max_length=100, default='')
-    recovered = models.CharField(max_length=100, default='')
+class Doctor(models.Model):
+    name = models.CharField(max_length=120)
+    speciality = models.CharField(max_length=120)
+    picture = models.ImageField(upload_to="doctors/")
+    details = models.TextField()
+    experience = models.TextField()
+    expertise = models.ManyToManyField(to='Expertise', related_name='doctors')
+    twitter = models.CharField(max_length=120, blank=True, null=True)
+    facebook = models.CharField(max_length=120, blank=True, null=True)
+    instagram = models.CharField(max_length=120, blank=True, null=True)
 
     def __str__(self):
-        return self.state
+        return self.name
+
+
+class Expertise(models.Model):
+    name = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.name
+
+
+
+
 
 
 

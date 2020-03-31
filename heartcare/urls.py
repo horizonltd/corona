@@ -6,8 +6,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hospital.urls')),
+    path('volunteer/', include('volunteer.urls')),
     path('appointment/', include('appointment.urls')),
     path('cases/', include('cases.urls')),
+
 ]
 
 if settings.DEBUG:
