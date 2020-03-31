@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import datetime
 import os
+from decouple import config
+from unipath import Path
+import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,9 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2y3*%r@d)w5+9@*)i3tdar5q)=^rl^o@zii7)3m4#l^xmr&cqt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'coronang.herokuapp.com']
 
 
 # Application definition
@@ -154,3 +158,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'limitedlinked@gmail.com'
 EMAIL_HOST_PASSWORD = '37429811stk'
 #EMAIL_USE_SSL = False
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
