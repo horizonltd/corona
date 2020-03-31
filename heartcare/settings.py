@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import datetime
 import os
-from decouple import config
-from unipath import Path
-import django_heroku
+# from decouple import config
+# from unipath import Path
+# import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -160,4 +160,4 @@ EMAIL_HOST_PASSWORD = '37429811stk'
 #EMAIL_USE_SSL = False
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
