@@ -163,3 +163,6 @@ EMAIL_HOST_PASSWORD = '37429811stk'
 
 # Activate Django-Heroku.
 # django_heroku.settings(locals())
+
+
+CORS_ORIGIN_ALLOW_ALL = True
