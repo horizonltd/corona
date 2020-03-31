@@ -1,1 +1,1 @@
-web: gunicorn core.wsgi --log-file=- 
+web: gunicorn heartcare.wsgi --log-file=- 
