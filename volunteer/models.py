@@ -1,15 +1,8 @@
 from django.db import models
 
 
-class TestCenter(models.Model):
-    name = models.CharField(max_length=120, default='')
-    address = models.CharField(max_length=120, default='')
-    picture = models.ImageField(upload_to="center/", default='')
-    details = models.TextField(blank=True, null=True)
-    geolocation = models.TextField(blank=True, null=True, default='')
 
-    def __str__(self):
-        return self.name
+
 
 class Country(models.Model):
     country = models.CharField(max_length=100, default='')
@@ -33,6 +26,31 @@ class State(models.Model):
         return self.state
 
 
+
+# EntryID
+# InvolvementID
+# FirstName
+# MiddleName
+# Surname
+# HighestQualification (SSCE, OND/ND,  B.Sc./B.Art/B.Ed/Btech/B.Eng/Etc., MSC/MBA/MPA/MPH/Etc. PhD/DBA/Etc. )
+# Profession (Surgeon, Nurse, Anesthesia, Lab Scientist, Pharmacist, Health Record, Social Worker, Lawyer, IT and Data Analyst, Social Media, Accountant, Economist, etc)
+# DoB
+# Sex
+# State
+# LGA
+# Ward
+# PollingUnit
+# Geolocation (Based on User map)
+# PreparedStateofToBeInvolved
+# PreparedStartDateTobeInvolved
+# PreparedEndDateandTobeInvolved
+# PreparedDaysTobeInvolved (Check Box: Mon, Tues, to Sunday)
+# PreparedStartTimeTobeInvolved (From 00 to 24)
+# PreparedEndTimeTobeInvolved (From 00 to 24)
+# PhoneNo
+# Email
+# Address
+# DateOfEntry
 
 
 

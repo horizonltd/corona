@@ -1,15 +1,6 @@
 from django.contrib import admin
-from . models import State, Country, TestCenter
+from . models import State, Country
 # Register your models here.
-
-
-
-
-class TestCenterAdmin(admin.ModelAdmin):
-    search_fields = ['__all__']
-
-admin.site.register(TestCenter, TestCenterAdmin)
-
 
 
 class StateAdmin(admin.ModelAdmin):

@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import (Slider, Service, Item, Doctor, Expertize, Faq, Gallery, TestCenter)
+from .models import (Slider, Service, Item, Doctor, Expertize, Faq, Gallery)
 
-admin.site.register(TestCenter)
 admin.site.register(Slider)
 admin.site.register(Service)
 admin.site.register(Item)

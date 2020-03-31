@@ -1,21 +1,6 @@
 from rest_framework import serializers
 from .import models
 
-class TestCenterSerializer(serializers.ModelSerializer):
-    #state = StateSerializer(many=True)
-    #presenter = PresenterSerializer(many=False)
-
-    class Meta:
-        model = models.TestCenter
-        fields = [
-            'name',
-            'address',
-            'picture',
-            'details',
-            'geolocation',
-            ]
-        #This help to view the level of hidden relationship
-        depth=1
 
 class StateSerializer(serializers.ModelSerializer):
     class Meta:

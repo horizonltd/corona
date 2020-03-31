@@ -47,16 +47,6 @@ class Doctor(models.Model):
     def __str__(self):
         return self.name
 
-class TestCenter(models.Model):
-    name = models.CharField(max_length=120)
-    address = models.CharField(max_length=120)
-    picture = models.ImageField(upload_to="center/")
-    details = models.TextField(blank=True, null=True)
-    geolocation = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return self.name
-
 
 class Expertize(models.Model):
     name = models.CharField(max_length=120)
