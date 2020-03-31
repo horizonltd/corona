@@ -11,8 +11,9 @@ class TestCenterSerializer(serializers.ModelSerializer):
             'name',
             'address',
             'picture',
+            'latitude',
+            'longitude',
             'details',
-            'geolocation',
             ]
         #This help to view the level of hidden relationship
         depth=1

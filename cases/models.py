@@ -5,8 +5,11 @@ class TestCenter(models.Model):
     name = models.CharField(max_length=120, default='')
     address = models.CharField(max_length=120, default='')
     picture = models.ImageField(upload_to="center/", default='')
-    details = models.TextField(blank=True, null=True)
-    geolocation = models.TextField(blank=True, null=True, default='')
+    latitude = models.CharField(max_length=120,blank=True, null=True, default='')
+    longitude = models.CharField(max_length=120,blank=True, null=True, default='')
+    details = models.TextField(blank=True, null=True, default='')
+
+
 
     def __str__(self):
         return self.name
