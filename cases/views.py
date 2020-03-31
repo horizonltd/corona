@@ -6,7 +6,7 @@ from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.authentication import TokenAuthentication
 # Create your views here.
-
+#psycopg2-2.8.4-cp27-cp27m-win32.whl
 
 class StateViewSet(viewsets.ModelViewSet):
     queryset = State.objects.all()
