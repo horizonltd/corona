@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'volunteer',
     'hospital',
     'appointment',
+    'request_Corona_Test',
     'cases',
     'rest_framework',
 ]

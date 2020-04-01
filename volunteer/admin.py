@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Volunteer, HighestQualification, Profession, State, Lga, Ward
+from . models import Volunteer, HighestQualification, Profession, State, Lga, Ward, Specialization
 # Register your models here.
 
 
@@ -8,6 +8,9 @@ from . models import Volunteer, HighestQualification, Profession, State, Lga, Wa
 
 # class ExpertiseAdmin(admin.ModelAdmin):
 #     search_fields = ['__all__']
+
+class SpecializationAdmin(admin.ModelAdmin):
+    search_fields = ['__all__']
 
 class VolunteerAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
@@ -35,6 +38,7 @@ admin.site.register(State, StateAdmin)
 admin.site.register(Lga, LgaAdmin)
 admin.site.register(Ward, WardAdmin)
 admin.site.register(Volunteer, VolunteerAdmin)
+admin.site.register(Specialization, SpecializationAdmin)
 # admin.site.register(Expertise, ExpertiseAdmin)
 # admin.site.register(Doctor, DoctorAdmin)
 

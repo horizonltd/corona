@@ -9,6 +9,7 @@ urlpatterns = [
     path('volunteer/', include('volunteer.urls')),
     path('appointment/', include('appointment.urls')),
     path('cases/', include('cases.urls')),
+    path('test/', include('request_Corona_Test.urls')),
 
 ]
 

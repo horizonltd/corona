@@ -5,6 +5,7 @@ from hospital.models import Doctor
 from .models import Appointment
 
 
+
 class AppointmentView(View):
     def get(self, request, *args, **kwargs):
         context = {

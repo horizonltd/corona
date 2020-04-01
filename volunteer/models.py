@@ -71,6 +71,7 @@ class Volunteer(models.Model):
     email = models.EmailField(unique=True)
     phone_Number = models.CharField(max_length=120)
     date_Of_Entry = models.DateField(max_length=120)
+    specialization = models.ManyToManyField(to='Specialization', related_name='volunteers', blank=True)
     picture = models.ImageField(upload_to="volunteer/", blank=True)
 
     def __str__(self):
@@ -100,6 +101,12 @@ class Lga(models.Model):
         return self.name
 
 class Ward(models.Model):
+    name = models.CharField(max_length=120)
+    
+    def __str__(self):
+        return self.name
+
+class Specialization(models.Model):
     name = models.CharField(max_length=120)
     
     def __str__(self):
