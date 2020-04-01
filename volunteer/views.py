@@ -1,5 +1,5 @@
-from .models import Expertise, Doctor
-from .serializers import ExpertiseSerializer, DoctorSerializer
+from .models import Expertise, Doctor, Volunteer
+from .serializers import ExpertiseSerializer, DoctorSerializer, VolunteerSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -17,6 +17,13 @@ class DoctorViewSet(viewsets.ModelViewSet):
 class ExpertiseViewSet(viewsets.ModelViewSet):
     queryset = Expertise.objects.all()
     serializer_class = ExpertiseSerializer
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (AllowAny, )
+
+
+class VolunteerViewSet(viewsets.ModelViewSet):
+    queryset = Volunteer.objects.all()
+    serializer_class = VolunteerSerializer
     authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny, )
 
