@@ -2,6 +2,26 @@ from django.db import models
 
 
 
+
+class ReportCase(models.Model):
+    first_Name = models.CharField(max_length=120)
+    middle_Name = models.CharField(max_length=120)
+    surname = models.CharField(max_length=120)
+    sex = models.CharField(max_length=120)
+    state = models.ForeignKey(to='State', related_name='reportCases', on_delete=models.CASCADE)
+    lga = models.ForeignKey(to='Lga', related_name='reportCases', on_delete=models.CASCADE)
+    ward = models.ForeignKey(to='Ward', related_name='reportCases', on_delete=models.CASCADE)
+    polling_Unit = models.CharField(max_length=120)
+    geolocation = models.CharField(max_length=120)
+    email = models.EmailField(unique=True)
+    phone_Number = models.CharField(max_length=120)
+    description = models.TextField(blank=True, null=True, default='')
+    reportDate = models.DateField(max_length=120)
+
+    def __str__(self):
+        return self.first_Name
+
+
 class Volunteer(models.Model):
     preparedDaysTobeInvolved_choices = (
         ('monday', "Monday"),
@@ -114,26 +134,12 @@ class Specialization(models.Model):
 
 
 
-# class Doctor(models.Model):
-#     name = models.CharField(max_length=120)
-#     speciality = models.CharField(max_length=120)
-#     picture = models.ImageField(upload_to="doctors/")
-#     details = models.TextField()
-#     experience = models.TextField()
-#     expertise = models.ManyToManyField(to='Expertise', related_name='doctors')
-#     twitter = models.CharField(max_length=120, blank=True, null=True)
-#     facebook = models.CharField(max_length=120, blank=True, null=True)
-#     instagram = models.CharField(max_length=120, blank=True, null=True)
-
-#     def __str__(self):
-#         return self.name
 
 
-# class Expertise(models.Model):
-#     name = models.CharField(max_length=120)
 
-#     def __str__(self):
-#         return self.name
+
+
+
 
 
 

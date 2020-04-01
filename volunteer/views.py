@@ -1,5 +1,5 @@
-from .models import Volunteer
-from .serializers import VolunteerSerializer
+from .models import Volunteer, ReportCase
+from .serializers import VolunteerSerializer, ReportCaseSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -27,6 +27,11 @@ class VolunteerViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny, )
 
+class ReportCaseViewSet(viewsets.ModelViewSet):
+    queryset = ReportCase.objects.all()
+    serializer_class = ReportCaseSerializer
+    authentication_classes = (TokenAuthentication, )
+    permission_classes = (AllowAny, )
 
 
 

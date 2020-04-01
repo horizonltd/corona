@@ -30,36 +30,27 @@ class VolunteerSerializer(serializers.ModelSerializer):
         #This help to view the level of hidden relationship
         depth=1
 
-# class DoctorSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = models.Doctor
-#         fields = [
-#             'name',
-#             'speciality',
-#             'picture',
-#             'details',
-#             'experience',
-#             'expertise',
-#             'twitter',
-#             'facebook',
-#             'instagram',
-#         ]
-#         #This help to view the level of hidden relationship
-#         depth=1
-# class ExpertiseSerializer(serializers.ModelSerializer):
-#     doctors = DoctorSerializer(many=True)
 
-#     class Meta:
-#         model = models.Expertise
-#         fields = [
-#             'name',
-#             'doctors',
-#         ]
-#         #This help to view the level of hidden relationship
-#         depth=1
-
-
-
+class ReportCaseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ReportCase
+        fields = [
+            'first_Name',
+            'middle_Name',
+            'surname',
+            'sex',
+            'state',
+            'lga',
+            'ward',
+            'polling_Unit',
+            'geolocation',
+            'email',
+            'phone_Number',
+            'description',
+            'reportDate',
+        ]
+        #This help to view the level of hidden relationship
+        depth=1
 
 
 

@@ -1,20 +1,27 @@
 from django.contrib import admin
-from . models import Volunteer, HighestQualification, Profession, State, Lga, Ward, Specialization
-# Register your models here.
+from . models import Volunteer, HighestQualification, Profession, State, Lga, Ward, Specialization, ReportCase
 
 
-# class DoctorAdmin(admin.ModelAdmin):
-#     search_fields = ['__all__']
+@admin.register(ReportCase)
+class ReportCaseAdmin(admin.ModelAdmin):
+    list_display = ['first_Name', 'middle_Name', 'state', 'lga', 'ward','reportDate']
+    date_hierarchy = ('reportDate')
+    list_filter = ['first_Name', 'state', ]
+    list_per_page = 20
+    search_fields = ['first_Name', 'reportDate','lga']
 
-# class ExpertiseAdmin(admin.ModelAdmin):
-#     search_fields = ['__all__']
+
+@admin.register(Volunteer)
+class VolunteerAdmin(admin.ModelAdmin):
+    list_display = ['first_Name', 'middle_Name', 'state', 'lga', 'ward','prepared_Start_DateTobeInvolved','prepared_EndDate_To_be_Involved']
+    date_hierarchy = ('prepared_Start_DateTobeInvolved')
+    list_filter = ['first_Name', 'state', ]
+    list_per_page = 20
+    search_fields = ['first_Name', 'state','lga']
+
 
 class SpecializationAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
-
-class VolunteerAdmin(admin.ModelAdmin):
-    search_fields = ['__all__']
-
 
 class HighestQualificationAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
@@ -32,12 +39,12 @@ class LgaAdmin(admin.ModelAdmin):
 class WardAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
 
+
 admin.site.register(HighestQualification, HighestQualificationAdmin)
 admin.site.register(Profession, ProfessionAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(Lga, LgaAdmin)
 admin.site.register(Ward, WardAdmin)
-admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(Specialization, SpecializationAdmin)
 # admin.site.register(Expertise, ExpertiseAdmin)
 # admin.site.register(Doctor, DoctorAdmin)
