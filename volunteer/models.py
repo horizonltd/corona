@@ -107,26 +107,26 @@ class Ward(models.Model):
 
 
 
-class Doctor(models.Model):
-    name = models.CharField(max_length=120)
-    speciality = models.CharField(max_length=120)
-    picture = models.ImageField(upload_to="doctors/")
-    details = models.TextField()
-    experience = models.TextField()
-    expertise = models.ManyToManyField(to='Expertise', related_name='doctors')
-    twitter = models.CharField(max_length=120, blank=True, null=True)
-    facebook = models.CharField(max_length=120, blank=True, null=True)
-    instagram = models.CharField(max_length=120, blank=True, null=True)
+# class Doctor(models.Model):
+#     name = models.CharField(max_length=120)
+#     speciality = models.CharField(max_length=120)
+#     picture = models.ImageField(upload_to="doctors/")
+#     details = models.TextField()
+#     experience = models.TextField()
+#     expertise = models.ManyToManyField(to='Expertise', related_name='doctors')
+#     twitter = models.CharField(max_length=120, blank=True, null=True)
+#     facebook = models.CharField(max_length=120, blank=True, null=True)
+#     instagram = models.CharField(max_length=120, blank=True, null=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
-class Expertise(models.Model):
-    name = models.CharField(max_length=120)
+# class Expertise(models.Model):
+#     name = models.CharField(max_length=120)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 
