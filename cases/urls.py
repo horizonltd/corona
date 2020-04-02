@@ -9,7 +9,7 @@ from .views import StateViewSet, CountryViewSet, TestCenterViewSet
 router  = routers.DefaultRouter()
 router.register('state', StateViewSet)
 router.register('country', CountryViewSet)
-router.register('test', TestCenterViewSet)
+router.register('center', TestCenterViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
