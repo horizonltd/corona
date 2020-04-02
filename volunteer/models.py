@@ -21,62 +21,7 @@ class ReportCase(models.Model):
     def __str__(self):
         return self.first_Name
 
-
-
-
-
-# class ReportCase(models.Model):
-#     first_Name = models.CharField(max_length=120)
-#     middle_Name = models.CharField(max_length=120)
-#     surname = models.CharField(max_length=120)
-#     sex = models.CharField(max_length=120)
-#     state = models.ForeignKey(to='State', related_name='reportCases', on_delete=models.CASCADE)
-#     lga = models.ForeignKey(to='Lga', related_name='reportCases', on_delete=models.CASCADE)
-#     ward = models.ForeignKey(to='Ward', related_name='reportCases', on_delete=models.CASCADE)
-#     polling_Unit = models.CharField(max_length=120)
-#     geolocation = models.CharField(max_length=120)
-#     email = models.EmailField(unique=True)
-#     phone_Number = models.CharField(max_length=120)
-#     description = models.TextField(blank=True, null=True, default='')
-#     reportDate = models.DateField(max_length=120)
-
-#     def __str__(self):
-#         return self.first_Name
-
-
-
 class Volunteer(models.Model):
-    # preparedDaysTobeInvolved_choices = (
-    #     ('monday', "Monday"),
-    #     ('tuesday', "Tuesday"),
-    #     ('sunday', "Sunday"),
-    # )
-    # state_choices = (
-    #     ('kaduna', "Kaduna"),
-    #     ('lagos', "Lagos"),
-    #     ('abuja', "Abuja"),
-    #     ('oyo', "Oyo"),
-    #     ('ogun', "Ogun"),
-    #     ('bauchi', "Bauchi"),
-    #     ('enugu', "Enugu"),
-    #     ('edo', "Edo"),
-    #     ('osun', "Osun"),
-    #     ('benue', "Benue"),
-    #     ('ekiti', "Ekiti"),
-    # )
-
-    ##Auto Generated Field
-    # entryID = models.CharField(max_length=120, blank=True, default='')
-    # def save(self, force_insert=False, force_update=False):
-    #     if self.entryID == "":
-    #         existing_entryIDs = Volunteer.objects.all().order_by('-entryID')
-    #         if existing_entryIDs.count() > 0:
-    #             new_entryID = int(existing_entryIDs[0].code[1:]) + 1
-    #         else:
-    #             new_entryID = 0
-    #         self.entryID = 'E%03d' % new_entryID
-    #     super(Volunteer, self).save(force_insert, force_update)
-    #Other part
     first_Name = models.CharField(max_length=120)
     middle_Name = models.CharField(max_length=120)
     surname = models.CharField(max_length=120)
