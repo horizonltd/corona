@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Volunteer, HighestQualification, Profession, State, Lga, Ward, Specialization, ReportCase
+from . models import Volunteer, Qualification, Profession, State, Lga, Ward, Specialization, ReportCase
 
 
 @admin.register(ReportCase)
@@ -23,7 +23,7 @@ class VolunteerAdmin(admin.ModelAdmin):
 class SpecializationAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
 
-class HighestQualificationAdmin(admin.ModelAdmin):
+class QualificationAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
 
 class ProfessionAdmin(admin.ModelAdmin):
@@ -40,7 +40,7 @@ class WardAdmin(admin.ModelAdmin):
     search_fields = ['__all__']
 
 
-admin.site.register(HighestQualification, HighestQualificationAdmin)
+admin.site.register(Qualification, QualificationAdmin)
 admin.site.register(Profession, ProfessionAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(Lga, LgaAdmin)

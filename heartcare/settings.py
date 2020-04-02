@@ -99,6 +99,31 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'corona',
+#         'USER': 'root',
+#         'PASSWORD': '37429811stk',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     },
+# }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'assembly$assembly',
+#         'USER': 'assembly',
+#         'PASSWORD': '37429811stk',
+#         'HOST': 'assembly.mysql.pythonanywhere-services.com',
+#     },
+# }
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

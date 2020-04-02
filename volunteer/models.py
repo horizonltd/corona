@@ -53,31 +53,19 @@ class Volunteer(models.Model):
                 new_entryID = 0
             self.entryID = 'E%03d' % new_entryID
         super(Volunteer, self).save(force_insert, force_update)
-
-    # ##Auto Generated Field
-    # involvementID = models.CharField(max_length=120, blank=True, default='')
-    # def push(self, force_insert=False, force_update=False):
-    #     if self.involvementID == "":
-    #         existing_involvementIDs = Volunteer.objects.all().order_by('-involvementID')
-    #         if existing_involvementIDs.count() > 0:
-    #             new_involvementID = int(existing_involvementIDs[0].code[1:]) + 1
-    #         else:
-    #             new_involvementID = 0
-    #         self.involvementID = 'I%03d' % new_involvementID
-    #     super(Volunteer, self).save(force_insert, force_update)
-
+    #Other part
     first_Name = models.CharField(max_length=120)
     middle_Name = models.CharField(max_length=120)
     surname = models.CharField(max_length=120)
     ##Relational
-    highest_Qualification = models.ManyToManyField(to='HighestQualification', related_name='volunteers')
+    qualification = models.ManyToManyField(to='Qualification', related_name='qualification')
     #Relational
-    profession = models.ManyToManyField(to='Profession', related_name='volunteers')
+    profession = models.ManyToManyField(to='Profession', related_name='profession')
     dob = models.DateField(max_length=120)
     sex = models.CharField(max_length=120)
-    state = models.ForeignKey(to='State', related_name='volunteers', on_delete=models.CASCADE)
-    lga = models.ForeignKey(to='Lga', related_name='volunteers', on_delete=models.CASCADE)
-    ward = models.ForeignKey(to='Ward', related_name='volunteers', on_delete=models.CASCADE)
+    state = models.ForeignKey(to='State', related_name='state', on_delete=models.CASCADE)
+    lga = models.ForeignKey(to='Lga', related_name='lga', on_delete=models.CASCADE)
+    ward = models.ForeignKey(to='Ward', related_name='ward', on_delete=models.CASCADE)
     polling_Unit = models.CharField(max_length=120)
     geolocation = models.CharField(max_length=120)
     #choices
@@ -91,13 +79,13 @@ class Volunteer(models.Model):
     email = models.EmailField(unique=True)
     phone_Number = models.CharField(max_length=120)
     date_Of_Entry = models.DateField(max_length=120)
-    specialization = models.ManyToManyField(to='Specialization', related_name='volunteers', blank=True)
+    specialization = models.ManyToManyField(to='Specialization', related_name='specialazation', blank=True)
     picture = models.ImageField(upload_to="volunteer/", blank=True)
 
     def __str__(self):
         return self.first_Name
 
-class HighestQualification(models.Model):
+class Qualification(models.Model):
     name = models.CharField(max_length=120)
     
     def __str__(self):
