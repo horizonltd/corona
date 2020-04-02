@@ -6,10 +6,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hospital.urls')),
-    path('volunteer/', include('volunteer.urls')),
-    path('appointment/', include('appointment.urls')),
-    path('cases/', include('cases.urls')),
-    path('test/', include('request_Corona_Test.urls')),
+    path('api/v1/volunteer/', include('volunteer.urls')),
+    path('api/v1/appointment/', include('appointment.urls')),
+    path('api/v1/cases/', include('cases.urls')),
+    path('api/v1/test/', include('request_Corona_Test.urls')),
 
 ]
 
