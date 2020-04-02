@@ -2,57 +2,57 @@ from rest_framework import serializers
 from .import models
 
 
-class StateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.State
-        fields = [
-            'name',
-            ]
-        #This help to view the level of hidden relationship
+# class StateSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.State
+#         fields = [
+#             'name',
+#             ]
+#         #This help to view the level of hidden relationship
 
-class LgaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.State
-        fields = [
-            'name',
-        ]
-        #This help to view the level of hidden relationship
-
-
-class WardSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Ward
-        fields = [
-            'name',
-        ]
-        #This help to view the level of hidden relationship
+# class LgaSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.State
+#         fields = [
+#             'name',
+#         ]
+#         #This help to view the level of hidden relationship
 
 
-class SpecializationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Specialization
-        fields = [
-            'name',
-        ]
-        #This help to view the level of hidden relationship
-
-class ProfessionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Profession
-        fields = [
-            'name',
-        ]
-        #This help to view the level of hidden relationship
+# class WardSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.Ward
+#         fields = [
+#             'name',
+#         ]
+#         #This help to view the level of hidden relationship
 
 
+# class SpecializationSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.Specialization
+#         fields = [
+#             'name',
+#         ]
+#         #This help to view the level of hidden relationship
 
-class QualificationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Qualification
-        fields = [
-            'name',
-        ]
-        #This help to view the level of hidden relationship
+# class ProfessionSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.Profession
+#         fields = [
+#             'name',
+#         ]
+#         #This help to view the level of hidden relationship
+
+
+
+# class QualificationSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.Qualification
+#         fields = [
+#             'name',
+#         ]
+#         #This help to view the level of hidden relationship
 
 class VolunteerSerializer(serializers.ModelSerializer):
     # state = StateSerializer()
@@ -90,32 +90,6 @@ class VolunteerSerializer(serializers.ModelSerializer):
         ]
         #This help to view the level of hidden relationship
         depth=1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class ReportCaseSerializer(serializers.ModelSerializer):
     class Meta:

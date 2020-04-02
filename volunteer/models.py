@@ -8,39 +8,62 @@ class ReportCase(models.Model):
     middle_Name = models.CharField(max_length=120)
     surname = models.CharField(max_length=120)
     sex = models.CharField(max_length=120)
-    state = models.ForeignKey(to='State', related_name='reportCases', on_delete=models.CASCADE)
-    lga = models.ForeignKey(to='Lga', related_name='reportCases', on_delete=models.CASCADE)
-    ward = models.ForeignKey(to='Ward', related_name='reportCases', on_delete=models.CASCADE)
+    state = models.CharField(max_length=120, default='')
+    lga = models.CharField(max_length=120, default='')
+    ward = models.CharField(max_length=120, default='')
     polling_Unit = models.CharField(max_length=120)
     geolocation = models.CharField(max_length=120)
     email = models.EmailField(unique=True)
     phone_Number = models.CharField(max_length=120)
     description = models.TextField(blank=True, null=True, default='')
-    reportDate = models.DateField(max_length=120)
+    reportDate = models.CharField(max_length=120)
 
     def __str__(self):
         return self.first_Name
 
 
+
+
+
+# class ReportCase(models.Model):
+#     first_Name = models.CharField(max_length=120)
+#     middle_Name = models.CharField(max_length=120)
+#     surname = models.CharField(max_length=120)
+#     sex = models.CharField(max_length=120)
+#     state = models.ForeignKey(to='State', related_name='reportCases', on_delete=models.CASCADE)
+#     lga = models.ForeignKey(to='Lga', related_name='reportCases', on_delete=models.CASCADE)
+#     ward = models.ForeignKey(to='Ward', related_name='reportCases', on_delete=models.CASCADE)
+#     polling_Unit = models.CharField(max_length=120)
+#     geolocation = models.CharField(max_length=120)
+#     email = models.EmailField(unique=True)
+#     phone_Number = models.CharField(max_length=120)
+#     description = models.TextField(blank=True, null=True, default='')
+#     reportDate = models.DateField(max_length=120)
+
+#     def __str__(self):
+#         return self.first_Name
+
+
+
 class Volunteer(models.Model):
-    preparedDaysTobeInvolved_choices = (
-        ('monday', "Monday"),
-        ('tuesday', "Tuesday"),
-        ('sunday', "Sunday"),
-    )
-    state_choices = (
-        ('kaduna', "Kaduna"),
-        ('lagos', "Lagos"),
-        ('abuja', "Abuja"),
-        ('oyo', "Oyo"),
-        ('ogun', "Ogun"),
-        ('bauchi', "Bauchi"),
-        ('enugu', "Enugu"),
-        ('edo', "Edo"),
-        ('osun', "Osun"),
-        ('benue', "Benue"),
-        ('ekiti', "Ekiti"),
-    )
+    # preparedDaysTobeInvolved_choices = (
+    #     ('monday', "Monday"),
+    #     ('tuesday', "Tuesday"),
+    #     ('sunday', "Sunday"),
+    # )
+    # state_choices = (
+    #     ('kaduna', "Kaduna"),
+    #     ('lagos', "Lagos"),
+    #     ('abuja', "Abuja"),
+    #     ('oyo', "Oyo"),
+    #     ('ogun', "Ogun"),
+    #     ('bauchi', "Bauchi"),
+    #     ('enugu', "Enugu"),
+    #     ('edo', "Edo"),
+    #     ('osun', "Osun"),
+    #     ('benue', "Benue"),
+    #     ('ekiti', "Ekiti"),
+    # )
 
     ##Auto Generated Field
     entryID = models.CharField(max_length=120, blank=True, default='')
@@ -80,7 +103,7 @@ class Volunteer(models.Model):
     phone_Number = models.CharField(max_length=120)
     date_Of_Entry = models.DateField(max_length=120)
     specialization = models.CharField(max_length=120, default='')
-    picture = models.CharField(max_length=120, default='')
+    picture = models.TextField(blank=True, null=True, default='')
 
     def __str__(self):
         return self.first_Name

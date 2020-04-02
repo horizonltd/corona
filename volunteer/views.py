@@ -1,5 +1,5 @@
-from .models import Volunteer, ReportCase, State, Lga, Ward, Qualification, Specialization, Profession
-from .serializers import VolunteerSerializer, ReportCaseSerializer, StateSerializer, SpecializationSerializer, QualificationSerializer, WardSerializer, LgaSerializer, ProfessionSerializer
+from .models import Volunteer, ReportCase
+from .serializers import VolunteerSerializer, ReportCaseSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -34,41 +34,41 @@ class ReportCaseViewSet(viewsets.ModelViewSet):
     permission_classes = (AllowAny, )
 
 
-class StateViewSet(viewsets.ModelViewSet):
-    queryset = State.objects.all()
-    serializer_class = StateSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (AllowAny, )
+# class StateViewSet(viewsets.ModelViewSet):
+#     queryset = State.objects.all()
+#     serializer_class = StateSerializer
+#     authentication_classes = (TokenAuthentication, )
+#     permission_classes = (AllowAny, )
 
-class LgaViewSet(viewsets.ModelViewSet):
-    queryset = Lga.objects.all()
-    serializer_class = LgaSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (AllowAny, )
+# class LgaViewSet(viewsets.ModelViewSet):
+#     queryset = Lga.objects.all()
+#     serializer_class = LgaSerializer
+#     authentication_classes = (TokenAuthentication, )
+#     permission_classes = (AllowAny, )
 
-class WardViewSet(viewsets.ModelViewSet):
-    queryset = Ward.objects.all()
-    serializer_class = WardSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (AllowAny, )
+# class WardViewSet(viewsets.ModelViewSet):
+#     queryset = Ward.objects.all()
+#     serializer_class = WardSerializer
+#     authentication_classes = (TokenAuthentication, )
+#     permission_classes = (AllowAny, )
 
-class QualificationViewSet(viewsets.ModelViewSet):
-    queryset = Qualification.objects.all()
-    serializer_class = QualificationSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (AllowAny, )
+# class QualificationViewSet(viewsets.ModelViewSet):
+#     queryset = Qualification.objects.all()
+#     serializer_class = QualificationSerializer
+#     authentication_classes = (TokenAuthentication, )
+#     permission_classes = (AllowAny, )
 
-class SpecializationViewSet(viewsets.ModelViewSet):
-    queryset = Specialization.objects.all()
-    serializer_class = SpecializationSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (AllowAny, )
+# class SpecializationViewSet(viewsets.ModelViewSet):
+#     queryset = Specialization.objects.all()
+#     serializer_class = SpecializationSerializer
+#     authentication_classes = (TokenAuthentication, )
+#     permission_classes = (AllowAny, )
 
-class ProfessionViewSet(viewsets.ModelViewSet):
-    queryset = Profession.objects.all()
-    serializer_class = ProfessionSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (AllowAny, )
+# class ProfessionViewSet(viewsets.ModelViewSet):
+#     queryset = Profession.objects.all()
+#     serializer_class = ProfessionSerializer
+#     authentication_classes = (TokenAuthentication, )
+#     permission_classes = (AllowAny, )
 
 
 
