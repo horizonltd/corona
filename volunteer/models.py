@@ -1,13 +1,4 @@
 from django.db import models
-from django.core.files.base import ContentFile
-
-# Your other code...
-
-elif model_field.get_internal_type() == "ImageField" or model_field.get_internal_type() == "FileField":  # Convert files from base64 back to a file.
-    if field_elt.text is not None:
-        image_data = b64decode(field_elt.text)
-        setattr(instance, model_field.name, ContentFile(image_data, 'myImage.png'))
-
 
 
 class ReportCase(models.Model):
