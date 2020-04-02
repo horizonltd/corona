@@ -55,12 +55,12 @@ class QualificationSerializer(serializers.ModelSerializer):
         #This help to view the level of hidden relationship
 
 class VolunteerSerializer(serializers.ModelSerializer):
-    state = StateSerializer()
-    lga = LgaSerializer()
-    ward = WardSerializer()
-    specialization = SpecializationSerializer()
-    qualification = QualificationSerializer()
-    profession = ProfessionSerializer()
+    # state = StateSerializer()
+    # lga = LgaSerializer()
+    # ward = WardSerializer()
+    # specialization = SpecializationSerializer()
+    # qualification = QualificationSerializer()
+    # profession = ProfessionSerializer()
 
     class Meta:
         model = models.Volunteer
