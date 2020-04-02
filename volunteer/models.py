@@ -1,5 +1,12 @@
 from django.db import models
+from django.core.files.base import ContentFile
 
+# Your other code...
+
+elif model_field.get_internal_type() == "ImageField" or model_field.get_internal_type() == "FileField":  # Convert files from base64 back to a file.
+    if field_elt.text is not None:
+        image_data = b64decode(field_elt.text)
+        setattr(instance, model_field.name, ContentFile(image_data, 'myImage.png'))
 
 
 
@@ -48,10 +55,12 @@ class Volunteer(models.Model):
     phone_Number = models.CharField(max_length=120)
     date_Of_Entry = models.DateField(max_length=120)
     specialization = models.CharField(max_length=120, default='')
-    picture = models.URLField(max_length=2000, unique=False, blank=True, default='')
+    #picture = models.URLField(max_length=10000000000, unique=False, blank=True, default='')
+    picture = models.ImageField(upload_to="volunteer/", blank=True)
 
-    def __str__(self):
-        return self.first_Name
+
+# Your other code...
+
 
 
 
