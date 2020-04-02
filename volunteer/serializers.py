@@ -65,7 +65,7 @@ class VolunteerSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Volunteer
         fields = [
-            'entryID',
+            # 'entryID',
             'first_Name',
             'middle_Name',
             'surname',
