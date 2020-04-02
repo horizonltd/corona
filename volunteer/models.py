@@ -103,7 +103,7 @@ class Volunteer(models.Model):
     phone_Number = models.CharField(max_length=120)
     date_Of_Entry = models.DateField(max_length=120)
     specialization = models.CharField(max_length=120, default='')
-    picture = models.URLField(max_length=128, unique=True, blank=True, default='')
+    picture = models.URLField(max_length=128, unique=False, blank=True, default='')
 
     def __str__(self):
         return self.first_Name
