@@ -80,7 +80,7 @@ class Volunteer(models.Model):
     phone_Number = models.CharField(max_length=120)
     date_Of_Entry = models.DateField(max_length=120)
     specialization = models.CharField(max_length=120, default='')
-    picture = models.ImageField(upload_to="volunteer/", blank=True)
+    picture = models.CharField(max_length=120, default='')
 
     def __str__(self):
         return self.first_Name
